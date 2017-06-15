@@ -12,7 +12,8 @@ p
 
 div
   - @post.comments.includes(:user).each do |comment|
-    = render comment
+    - cache comment
+      = render comment
 
 = link_to 'Edit', edit_post_path(@post)
 '  |
