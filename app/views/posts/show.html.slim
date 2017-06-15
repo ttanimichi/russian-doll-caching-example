@@ -11,11 +11,8 @@ p
   = @post.user
 
 div
-  - @post.comments.includes(:user).each do |c|
-    .comment
-      p = "コメント: #{c.content}"
-      p = "なまえ: #{c.user.name}"
-      p ---
+  - @post.comments.includes(:user).each do |comment|
+    = render comment
 
 = link_to 'Edit', edit_post_path(@post)
 '  |
