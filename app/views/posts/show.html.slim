@@ -10,6 +10,13 @@ p
   strong User:
   = @post.user
 
+div
+  - @post.comments.each do |c|
+    .comment
+      p = "コメント: #{c.content}"
+      p = "なまえ: #{c.user.name}"
+      p ---
+
 = link_to 'Edit', edit_post_path(@post)
 '  |
 = link_to 'Back', posts_path
