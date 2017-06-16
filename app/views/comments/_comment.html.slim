@@ -1,5 +1,6 @@
 .comment
   p = "コメント: #{comment.content}"
   p = "じかん: #{comment.created_at}"
-  / p = "なまえ: #{comment.user.name}"
+  - cache comment.user do
+    = render comment.user
   p ---
